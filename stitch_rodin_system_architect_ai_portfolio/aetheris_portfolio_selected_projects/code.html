@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Engineered Solutions | AETHERIS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#97b0ff",
+                        "on-tertiary-fixed": "#00174b",
+                        "secondary-container": "#aa8e1d",
+                        "on-secondary-container": "#332900",
+                        "on-primary-container": "#554300",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1f1b13",
+                        "secondary": "#e4c451",
+                        "on-tertiary-container": "#254188",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#e4c451",
+                        "outline-variant": "#4d4635",
+                        "background": "#16130b",
+                        "on-secondary-fixed": "#231b00",
+                        "surface-container-lowest": "#110e07",
+                        "primary-fixed": "#ffe088",
+                        "surface-variant": "#38342b",
+                        "surface-tint": "#e9c349",
+                        "surface-container": "#231f17",
+                        "on-primary-fixed": "#241a00",
+                        "primary-container": "#d4af37",
+                        "on-secondary": "#3b2f00",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-dim": "#16130b",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-fixed-variant": "#27438a",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "inverse-primary": "#735c00",
+                        "surface-container-highest": "#38342b",
+                        "on-secondary-fixed-variant": "#554500",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-surface-variant": "#d0c5af",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#eae1d4",
+                        "inverse-on-surface": "#343027",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2d2a21",
+                        "surface-bright": "#3d392f",
+                        "on-tertiary": "#082b72",
+                        "secondary-fixed": "#ffe17a",
+                        "tertiary": "#bfcdff",
+                        "inverse-surface": "#eae1d4",
+                        "on-background": "#eae1d4",
+                        "outline": "#99907c",
+                        "surface": "#16130b",
+                        "primary": "#f2ca50"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "card": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Poppins"],
+                        "headline-lg-mobile": ["Poppins"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .project-card-glow:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: #D4AF37;
+        }
+        .filter-chip-active {
+            background-color: #d4af37;
+            color: #3c2f00;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30 antialiased">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-2xl">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">AETHERIS</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Skills</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Experience</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full font-label-md hover:opacity-80 transition-opacity">
+                Initiate Handshake
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<header class="px-margin-desktop max-w-container-max mx-auto mb-16">
+<div class="inline-flex items-center gap-2 mb-4">
+<span class="h-px w-8 bg-primary"></span>
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest">Portfolio Index</span>
+</div>
+<h1 class="font-display-lg text-display-lg max-w-3xl mb-8">Engineered Solutions.</h1>
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 mt-12">
+<button class="filter-btn filter-chip-active px-6 py-2 border border-outline/30 rounded-full font-label-md text-label-md transition-all" onclick="filterProjects('all')">All Projects</button>
+<button class="filter-btn px-6 py-2 border border-outline/30 rounded-full font-label-md text-label-md text-on-surface-variant hover:border-primary/50 transition-all" onclick="filterProjects('Robotics')">Robotics</button>
+<button class="filter-btn px-6 py-2 border border-outline/30 rounded-full font-label-md text-label-md text-on-surface-variant hover:border-primary/50 transition-all" onclick="filterProjects('AI')">AI</button>
+<button class="filter-btn px-6 py-2 border border-outline/30 rounded-full font-label-md text-label-md text-on-surface-variant hover:border-primary/50 transition-all" onclick="filterProjects('Cloud')">Cloud</button>
+<button class="filter-btn px-6 py-2 border border-outline/30 rounded-full font-label-md text-label-md text-on-surface-variant hover:border-primary/50 transition-all" onclick="filterProjects('Security')">Security</button>
+</div>
+</header>
+<!-- Projects Grid -->
+<section class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project Card 1 -->
+<article class="project-item group bg-[#1F1F1F] border border-outline-variant/20 rounded-card overflow-hidden transition-all duration-500 project-card-glow" data-category="Robotics">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-end cinematic close-up of a robotic arm performing surgical precision assembly on a circuit board. The lighting is dramatic and moody with golden highlights on black metallic surfaces. The aesthetic is clean, industrial luxury, emphasizing engineering excellence and futuristic technology in a dark mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSh9xT6Rdr_2A7s8PhAthlsTvgkvROCEjWzYYxp1F5NPo_QGcz13W3KIJt4CzfHsAaRIvmhYAqgLUQfDzbqVq16qfcveaEvZ5Gt98TzGVOVlxeZtPX183JAT1XE5Tqj3eeY7gemrxKEW2YkELSQA2sMI7_J0AQ7kezpCMONFkoh9SFqf3EjJNcXSNyh-UYkSmH1tUv0XQdcOlunv29-yeoOX8mA_SoJUQRISXdLh05lC0R8tyzCqLvzQsyYXwY-qFpDgfTpx33hb0"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">ROS2</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">C++</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">OpenCV</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">Vanguard Arm v.4</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">High-precision 7-DOF industrial robotic arm architecture featuring autonomous trajectory correction and real-time obstacle avoidance in dynamic environments.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary group/link" href="#">
+                        View Case Study
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="project-item group bg-[#1F1F1F] border border-outline-variant/20 rounded-card overflow-hidden transition-all duration-500 project-card-glow" data-category="AI">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract visualization of neural networks represented by glowing golden filaments of light pulsing against a deep obsidian background. The composition is asymmetrical and sophisticated, suggesting complex data processing and artificial intelligence. Soft ambient shadows create a sense of immense digital depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeQHUQf5XoKk9K1Mgk6vijQsrrZIPKMT9DeVE4Ai1d_cIDv4Ee0iYGtEqmy3VLs1RiSTWavI7CdYOYTQ-WV-A2sMMPQAVUtm-VKxKFuf5epzKFDnTXU3BC-3W8r1IZS7bSCVYEbQFvXwqmBNSb4nhqgyfiKqLGVCKsXIM2BKUv7V3jyHjykra84RGG8z4VYCjfq3t41tEHYBW07vhCQ7LTHOSJYWdEoREtjdZKv86RgoTYZ2SgxH18Sp3cVS1Pa2SCiwbynAZA_uw"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">PyTorch</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">CUDA</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">Transformers</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">Neural Synthetics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">Large-scale transformer model optimized for edge computing devices, reducing latency by 40% while maintaining enterprise-grade accuracy levels.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary group/link" href="#">
+                        View Case Study
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project Card 3 -->
+<article class="project-item group bg-[#1F1F1F] border border-outline-variant/20 rounded-card overflow-hidden transition-all duration-500 project-card-glow" data-category="Cloud">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean top-down view of a modern server room aisle, featuring sleek black hardware racks with minimal amber LED status indicators. The environment is perfectly symmetrical and spotless, reflecting a high-end enterprise cloud infrastructure. The mood is powerful, secure, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmjVfCBTlhLu8gcvQBJvIBPrlY52h7vdrV2MflJXEzFLp2wxxDVOw9a-9DKEJm3idnaYZRluPxLcCQzLl1WZ-Y_vjflfdHzrQx0r8NVJnKFMpSPMmk2EzfhT7fdoglrKxuuJeUDsCu1UGTXBLYK_9i3ujhExr3h_pD0V9XAwAQeuFLeBvFrBgFzCBKrucK8nw75r-P50Cncf3M2R1S36GaFn3HBE6kVdKEs4UNzL1Ewcd8VGn4lYtl5R1B9uAweTKILoSeWQF4kqw"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">Kubernetes</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">AWS</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">Go</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">Stratus Mesh</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">Multi-cloud service mesh orchestration layer designed for zero-downtime deployments across geographically distributed clusters.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary group/link" href="#">
+                        View Case Study
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project Card 4 -->
+<article class="project-item group bg-[#1F1F1F] border border-outline-variant/20 rounded-card overflow-hidden transition-all duration-500 project-card-glow" data-category="Security">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Macro photography of a high-tech security key or biometric sensor with a gold-trimmed edge. The background is a dark matte texture with subtle bokeh lights. The image conveys the concepts of impenetrable security, premium hardware design, and elite protection. High contrast and minimalist luxury style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-rkFBma0VgLYnTqi7m7P4_FfUBGGL9htTZnzp1g9SH7MjoRbHl_g2kQUjHOMVNKMZNfdr-3bwgwX3BbQvXdxsdIfZgyx6_-P6UdaviUzhMMg9f3cyI1eBuuH_Yh2e9L64N6yaZ5GYtkw-wnSr9L84xggz_wTkOStAE-25nEJtZDyOBJwUoeVZuLxcMmBPaxF2IqorzWcbgAFM776ravv7JbQgfdMqCrhVXoaR_b6AGbhsgUuvPgFbuBLSPpYi9S_yPrPgeVDKae4"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">Rust</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">eBPF</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">OAuth 2.1</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">Aeon Shield</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">Kernel-level security monitoring framework utilizing Rust for memory-safe introspection of suspicious system calls and network traffic.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary group/link" href="#">
+                        View Case Study
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project Card 5 -->
+<article class="project-item group bg-[#1F1F1F] border border-outline-variant/20 rounded-card overflow-hidden transition-all duration-500 project-card-glow" data-category="Robotics">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A wide shot of an autonomous drone fleet flying in a grid formation over a futuristic urban landscape at dusk. The drones have sleek aerodynamic silhouettes with glowing gold light indicators. The sky is a deep indigo, providing a high-contrast backdrop for the golden tech accents. Elegant and powerful engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhN6cBa11lTkn0-XltG6oo6LGt_ETqLmSBbm5tzagIDGqCGa07K7CNMKZqX5MIgO1r0H7VRekFKf19yJkvu3CovR1op1QMlGpMQct3un54AmkgD-FuNozKNpQQAiyxXb2tBhM1UaB3CgzmV-VyktO1XqNkxYHl8wr3_4g7PtOXf66bqvNUex-4H2_OUPUpMhbxQpcDc5uHZqh8DIsWgeHw_DVDmyMxOODf7a-i2_sMJPNEV1nRZ8mZIRdyeCGoQR3BEXD_SP-D2Dw"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">SLAM</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">C</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">RTOS</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">Icarus Swarm</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">Coordinated multi-agent drone system for large-scale topographic mapping and autonomous infrastructure inspection using SLAM algorithms.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary group/link" href="#">
+                        View Case Study
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project Card 6 -->
+<article class="project-item group bg-[#1F1F1F] border border-outline-variant/20 rounded-card overflow-hidden transition-all duration-500 project-card-glow" data-category="AI">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist data dashboard visualized as 3D golden bars rising from a dark liquid-like surface. Each bar represents a data point, glowing softly. The scene is lit by a single spotlight from above, creating deep cinematic shadows. Represents precision analytics and advanced business intelligence in a premium tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxjfNa2ivRBhJQ8Qh7AYOZp4Z9Cp7NNoUl4PWSLSUg9LHevnAVF6ymtxKcL6iZNUQKLDsoSais0gkVg3zw1ZgraujOXqm66Ic0w2HDkFhZo9EQth7cdNTf_XQFg7rbB7Hq0zCMi1dMQRk5EAboWHMmqKXJhkWLLjKYZrqW0FZll1wKGyN4rX3ollqgOVA9XOypnexbGYNf-K_Jf7Bfjlzdxi1JYF6082Le1Jr0kMeX7i-maC6o1UnDbuS96Rm5ojjog6gwoa3vAUM"/>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">TensorFlow</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">React</span>
+<span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded border border-outline-variant/30 text-on-surface-variant">GraphQL</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-surface">Aetheris Analytics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">Predictive maintenance dashboard powered by machine learning, forecasting equipment failures with a 92% reliability rate.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary group/link" href="#">
+                        View Case Study
+                        <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary">AETHERIS</div>
+<div class="flex gap-8 my-6 md:my-0">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">X</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 AETHERIS ROBOTICS. ENGINEERED FOR EXCELLENCE.</p>
+</div>
+</footer>
+<script>
+        function filterProjects(category) {
+            const items = document.querySelectorAll('.project-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => {
+                if(btn.innerText.includes(category) || (category === 'all' && btn.innerText.includes('All'))) {
+                    btn.classList.add('filter-chip-active');
+                    btn.classList.remove('text-on-surface-variant');
+                } else {
+                    btn.classList.remove('filter-chip-active');
+                    btn.classList.add('text-on-surface-variant');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Initialize with smooth reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.project-item');
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body></html>
