@@ -32,6 +32,13 @@ export function Contact() {
             >
               {siteConfig.email}
             </a>
+            {" · "}
+            <a
+              href="tel:+250794415318"
+              className="text-primary transition-opacity hover:opacity-80"
+            >
+              +250 794 415 318
+            </a>
           </p>
         </div>
 

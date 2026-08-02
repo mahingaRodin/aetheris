@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/data";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -48,7 +49,10 @@ export function Navbar() {
 
   return (
     <>
-      <nav
+      <motion.nav
+        initial={{ y: -24, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
         className={cn(
           "fixed top-0 z-50 w-full border-b transition-all duration-500",
           scrolled
@@ -56,21 +60,28 @@ export function Navbar() {
             : "border-transparent bg-transparent",
         )}
       >
-        <div className="container-aetheris flex items-center justify-between py-4">
-          <a
+        <div className="container-aetheris flex items-center justify-between py-3 md:py-4">
+          <motion.a
             href="#home"
-            className="font-display text-xl font-bold tracking-tighter text-primary md:text-2xl"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.96 }}
+            className="flex items-center gap-3"
           >
-            {siteConfig.brand}
-          </a>
+            <BrandLogo size={36} animated />
+            <span className="font-display text-xl font-bold tracking-tighter text-gold-gradient md:text-2xl">
+              {siteConfig.brand}
+            </span>
+          </motion.a>
 
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-7 xl:flex">
             {navLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.href}
                 href={link.href}
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.96 }}
                 className={cn(
-                  "relative font-mono text-xs uppercase tracking-[0.12em] transition-colors duration-300",
+                  "relative font-mono text-[11px] uppercase tracking-[0.12em] transition-colors duration-300",
                   active === link.href
                     ? "text-primary"
                     : "text-muted hover:text-primary",
@@ -83,7 +94,7 @@ export function Navbar() {
                     active === link.href ? "w-full" : "w-0",
                   )}
                 />
-              </a>
+              </motion.a>
             ))}
           </div>
 
@@ -96,16 +107,21 @@ export function Navbar() {
             </MagneticButton>
           </div>
 
-          <button
+          <motion.button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="text-primary lg:hidden"
+            className="text-primary xl:hidden"
+            whileTap={{ scale: 0.9 }}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}
-          </button>
+            {open ? (
+              <X size={28} strokeWidth={1.5} />
+            ) : (
+              <Menu size={28} strokeWidth={1.5} />
+            )}
+          </motion.button>
         </div>
-      </nav>
+      </motion.nav>
 
       <AnimatePresence>
         {open && (
@@ -114,12 +130,15 @@ export function Navbar() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.77, 0, 0.175, 1] }}
-            className="fixed inset-0 z-40 flex flex-col bg-background/98 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-background/98 backdrop-blur-xl xl:hidden"
           >
             <div className="flex items-center justify-between px-4 py-4">
-              <span className="font-display text-xl font-bold tracking-tighter text-primary">
-                {siteConfig.brand}
-              </span>
+              <div className="flex items-center gap-3">
+                <BrandLogo size={32} />
+                <span className="font-display text-xl font-bold tracking-tighter text-gold-gradient">
+                  {siteConfig.brand}
+                </span>
+              </div>
               <button
                 type="button"
                 aria-label="Close menu"
@@ -130,14 +149,15 @@ export function Navbar() {
               </button>
             </div>
 
-            <div className="flex flex-1 flex-col items-center justify-center gap-8">
+            <div className="flex flex-1 flex-col items-center justify-center gap-7">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.08 * i + 0.15 }}
+                  transition={{ delay: 0.07 * i + 0.12 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setOpen(false)}
                   className="font-display text-3xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
                 >
@@ -147,7 +167,7 @@ export function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.75 }}
                 className="mt-4"
               >
                 <MagneticButton href="#contact" onClick={() => setOpen(false)}>

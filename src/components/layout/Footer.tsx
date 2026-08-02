@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { navLinks, siteConfig } from "@/data";
 
 function GitHubIcon() {
@@ -33,14 +34,21 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-section">
       <div className="container-aetheris py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
           <div>
-            <p className="font-display text-2xl font-bold tracking-tighter text-primary">
-              {siteConfig.brand}
+            <div className="flex items-center gap-3">
+              <BrandLogo size={42} />
+              <p className="font-display text-2xl font-bold tracking-tighter text-gold-gradient">
+                {siteConfig.brand}
+              </p>
+            </div>
+            <p className="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-muted">
+              {siteConfig.name}
             </p>
             <p className="mt-4 max-w-md font-sans text-sm leading-relaxed text-muted md:text-base">
-              Engineering intelligent systems at the frontier of robotics,
-              secure infrastructure, and autonomous decision platforms.
+              Backend, DevOps, and Machine Learning systems engineered in
+              Kigali—built for precision, security, and long-horizon leadership
+              in intelligent platforms.
             </p>
           </div>
 
@@ -94,7 +102,7 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <p className="font-mono text-xs tracking-wider text-muted">
-            © {year} {siteConfig.brand}. All systems operational.
+            © {year} {siteConfig.name}. All systems operational.
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted/70">
             Built for precision · Designed for leadership

@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --section: #171717;
-  --card: #1f1f1f;
+  --background: #07080d;
+  --section: #12100a;
+  --card: #1a160e;
   --primary: #d4af37;
   --secondary: #f4d35e;
-  --foreground: #fafafa;
-  --muted: #b3b3b3;
-  --border: #2e2e2e;
-  --on-primary: #0a0a0a;
+  --foreground: #f7f0dd;
+  --muted: #c4b896;
+  --border: #3a3220;
+  --on-primary: #0a0804;
   --gold-soft: #ffe088;
   --surface-warm: #16130b;
+  --gold-glow: rgba(212, 175, 55, 0.22);
 }
 
 @theme inline {
@@ -50,8 +51,40 @@
     scroll-behavior: smooth;
   }
 
+  html.magic-cursor,
+  html.magic-cursor body,
+  html.magic-cursor a,
+  html.magic-cursor button {
+    cursor: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    html.magic-cursor,
+    html.magic-cursor body,
+    html.magic-cursor a,
+    html.magic-cursor button {
+      cursor: auto;
+    }
+  }
+
   body {
-    background: var(--background);
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(212, 175, 55, 0.12), transparent 55%),
+      radial-gradient(900px 500px at 100% 20%, rgba(244, 211, 94, 0.05), transparent 45%),
+      radial-gradient(800px 400px at 0% 80%, rgba(122, 76, 8, 0.18), transparent 50%),
+      var(--background);
     color: var(--foreground);
     font-family: var(--font-inter), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -59,23 +92,24 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--primary) 35%, transparent);
+    background: color-mix(in srgb, var(--primary) 40%, transparent);
     color: var(--foreground);
   }
 }
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #ffe088 0%, #d4af37 100%);
+    background: linear-gradient(135deg, #ffe088 0%, #f4ca50 35%, #d4af37 70%, #a67c1a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .luxury-blur {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background-color: rgba(7, 8, 13, 0.78);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
   }
 
   .divider-luxury {
@@ -83,9 +117,15 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      #4d4635 50%,
+      #d4af37 50%,
       transparent 100%
     );
+  }
+
+  .gold-panel {
+    background: linear-gradient(180deg, rgba(26, 22, 14, 0.95), rgba(18, 16, 10, 0.98));
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.08);
   }
 
   .container-aetheris {

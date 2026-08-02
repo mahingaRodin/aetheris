@@ -4,6 +4,13 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { timeline } from "@/data";
 
+const engagementLabel: Record<string, string> = {
+  contract: "Contract",
+  "part-time": "Part-time",
+  award: "Award",
+  education: "Education",
+};
+
 export function Trajectory() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -23,8 +30,8 @@ export function Trajectory() {
             Trajectory
           </h2>
           <p className="mt-4 font-sans text-muted md:text-lg">
-            A deliberate path from embedded systems to executive-grade platform
-            leadership.
+            Contract and part-time engagements across ML, backend, DevOps, and
+            Azure-aware cloud delivery—open to full-time opportunities.
           </p>
         </div>
 
@@ -32,7 +39,7 @@ export function Trajectory() {
           <div className="absolute bottom-0 left-0 top-0 w-px bg-border" />
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-0 top-0 w-px origin-top bg-gradient-to-b from-primary via-primary to-primary/10"
+            className="absolute left-0 top-0 w-px origin-top bg-gradient-to-b from-secondary via-primary to-primary/10"
           />
 
           <div className="space-y-12 md:space-y-16">
@@ -45,13 +52,13 @@ export function Trajectory() {
                 transition={{ delay: 0.05, duration: 0.55 }}
                 className="relative pl-10 md:pl-14"
               >
-                <span className="absolute left-[-5px] top-1.5 h-2.5 w-2.5 rounded-full border border-primary bg-background shadow-[0_0_12px_rgba(212,175,55,0.45)]" />
+                <span className="absolute left-[-5px] top-1.5 h-2.5 w-2.5 rounded-full border border-primary bg-background shadow-[0_0_14px_rgba(244,202,80,0.55)]" />
                 <div className="mb-2 flex flex-wrap items-center gap-3">
                   <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
                     {item.startDate} — {item.endDate}
                   </span>
-                  <span className="rounded-full border border-border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted">
-                    {item.type}
+                  <span className="rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-secondary">
+                    {engagementLabel[item.engagement ?? item.type] ?? item.type}
                   </span>
                 </div>
                 <h3 className="font-display text-xl font-semibold md:text-2xl">
@@ -76,7 +83,7 @@ export function Trajectory() {
                     ))}
                   </ul>
                 )}
-                <div className="mt-10 h-px w-full max-w-xl bg-gradient-to-r from-border to-transparent last:hidden md:mt-12" />
+                <div className="mt-10 h-px w-full max-w-xl bg-gradient-to-r from-primary/40 to-transparent md:mt-12" />
               </motion.article>
             ))}
           </div>

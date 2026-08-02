@@ -39,7 +39,9 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ delay: index * 0.08, duration: 0.55 }}
-                className="group rounded-2xl border border-border bg-card p-8 transition-all duration-400 hover:-translate-y-1 hover:border-primary"
+                whileHover={{ y: -6 }}
+                whileTap={{ scale: 0.98 }}
+                className="group rounded-2xl border border-border bg-card p-8 transition-all duration-400 hover:border-primary"
               >
                 <div className="mb-8 flex h-12 w-12 items-center justify-center bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
                   <Icon size={22} strokeWidth={1.5} />

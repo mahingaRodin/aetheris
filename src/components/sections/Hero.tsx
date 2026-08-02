@@ -5,12 +5,13 @@ import { ChevronDown } from "lucide-react";
 import { siteConfig } from "@/data";
 import { HeroShader } from "@/components/effects/HeroShader";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.15 },
   },
 };
 
@@ -41,9 +42,13 @@ export function Hero() {
         animate="show"
         className="relative z-10 mx-auto max-w-5xl px-4 text-center md:px-16"
       >
+        <motion.div variants={item} className="mb-6 flex justify-center">
+          <BrandLogo size={72} animated priority />
+        </motion.div>
+
         <motion.div variants={item} className="mb-6">
           <span className="inline-block border border-primary/40 bg-primary/5 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-            Strategic Robotics Leadership
+            {siteConfig.name} · Systems Engineer
           </span>
         </motion.div>
 
@@ -58,7 +63,7 @@ export function Hero() {
 
         <motion.div
           variants={item}
-          className="mb-12 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.12em] text-muted md:text-sm"
+          className="mb-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.12em] text-muted md:text-sm"
         >
           {siteConfig.titles.map((title, index) => (
             <span key={title} className="inline-flex items-center gap-4">
@@ -98,9 +103,11 @@ export function Hero() {
       <motion.a
         href="#about"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.45 }}
+        animate={{ opacity: 0.5 }}
         transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-muted transition-opacity hover:opacity-80"
+        whileHover={{ opacity: 0.9, y: 2 }}
+        whileTap={{ scale: 0.95 }}
+        className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-muted"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.25em]">
           Explore
