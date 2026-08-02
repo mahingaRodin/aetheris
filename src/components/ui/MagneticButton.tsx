@@ -65,6 +65,8 @@ export function MagneticButton({
         style={{ x: springX, y: springY }}
         onMouseMove={handleMove}
         onMouseLeave={handleLeave}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.94 }}
         className={sharedClass}
         onClick={onClick}
       >
@@ -80,6 +82,8 @@ export function MagneticButton({
       style={{ x: springX, y: springY }}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.94 }}
       className={sharedClass}
       onClick={onClick}
     >
