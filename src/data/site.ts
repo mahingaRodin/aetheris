@@ -2,20 +2,22 @@ import type { SiteConfig, NavLink } from "@/types";
 
 export const siteConfig: SiteConfig = {
   brand: "RODIN",
-  name: "Systems Engineer",
+  name: "Rodin Mahinga",
   headline: "Engineering Intelligent Systems for the Future",
   subheadline:
-    "Building autonomous platforms at the intersection of robotics, secure infrastructure, and executive-grade engineering leadership.",
+    "Backend, DevOps, Azure, and Machine Learning engineer from Kigali—building secure APIs, cloud-native pipelines, and AI systems that scale from silicon to production. Open to full-time roles.",
   titles: [
-    "Systems Engineer",
     "Software Engineer",
-    "Cybersecurity Engineer",
     "DevOps Engineer",
-    "Embedded Systems Developer",
+    "Machine Learning Engineer",
+    "Systems Programmer",
   ],
-  ctaPrimary: { label: "View Portfolio", href: "#projects" },
-  ctaSecondary: { label: "Download Executive Brief", href: "#contact" },
-  email: "handshake@aetheris.dev",
+  ctaPrimary: { label: "View Mission Control", href: "#projects" },
+  ctaSecondary: {
+    label: "View Credentials",
+    href: "#certificates",
+  },
+  email: "mahingarodin@gmail.com",
   socials: [
     { label: "GitHub", href: "https://github.com/mahingaRodin" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/m-rodin-1b21a9375/" },
@@ -29,40 +31,42 @@ export const navLinks: NavLink[] = [
   { label: "Skills", href: "#skills" },
   { label: "Trajectory", href: "#trajectory" },
   { label: "Projects", href: "#projects" },
+  { label: "Research", href: "#research" },
   { label: "Credentials", href: "#certificates" },
-  { label: "Insights", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const stats = [
-  { value: "12+", label: "Years of Experience" },
-  { value: "85+", label: "Projects Completed" },
-  { value: "42", label: "Technologies" },
-  { value: "15", label: "Global Certifications" },
+  { value: "7+", label: "Years of Experience" },
+  { value: "95+", label: "Public Repositories" },
+  { value: "40+", label: "Systems Shipped" },
+  { value: "11", label: "Verified Credentials" },
 ];
 
 export const aboutContent = {
   eyebrow: "Executive Summary",
   title: "The Architect's Vision",
   philosophy: "Precision in code, autonomy in action.",
-  body: "In the intersection of high-level robotics and strategic leadership, I architect systems that don't just solve problems—they define new paradigms. My approach merges the rigorous discipline of embedded systems with the scalability of modern cloud-native architectures.",
+  body: "I am Uwonkunda Mahinga Rodin—a Software, DevOps, and Machine Learning engineer based in Kigali. Through contract and part-time engagements with Aphezis, Loxotech, and Rwanda TVET Board, I have designed scalable APIs, hardened delivery pipelines (including Azure-oriented cloud workflows), and shipped data-driven systems for AI and IoT. I am now seeking full-time roles where rigorous engineering meets executive-grade product leadership.",
   pillars: [
     {
-      title: "Next-Gen Robotics",
+      title: "Backend Systems at Scale",
       description:
-        "Developing low-latency autonomous navigation and reactive swarm intelligence frameworks.",
+        "Spring Boot and FastAPI architectures with PostgreSQL, Redis, and Kafka—built for throughput, integrity, and operational clarity.",
     },
     {
-      title: "AI-Driven Optimization",
+      title: "AI & Machine Learning",
       description:
-        "Leveraging deep learning to refine real-time industrial workflows and predictive maintenance.",
+        "PyTorch and TensorFlow models for prediction, computer vision, and medical imaging research—including diffusion-based augmentation.",
     },
     {
-      title: "Defensive Engineering",
+      title: "Cloud, Azure & DevOps",
       description:
-        "Hardening robotics infrastructure against sophisticated cyber threats and edge vulnerabilities.",
+        "Dockerized CI/CD, Linux operations, and Microsoft Azure experience for reliable cloud delivery under real production pressure.",
     },
   ],
-  portraitImage:
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&q=80",
+  portraitImage: "/profile/rodin.jpg",
+  location: "Kigali, Rwanda",
+  phone: "+250 794 415 318",
+  organizations: "Open to opportunities · Contract alumni: EchoSols · Loxotech · RTB",
 };

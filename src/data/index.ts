@@ -4,3 +4,5 @@ export { certificates } from "./certificates";
 export { testimonials } from "./testimonials";
 export { skillCategories } from "./skills";
 export { timeline } from "./timeline";
+export { researchPapers } from "./research";
+export type { ResearchPaper } from "./research";

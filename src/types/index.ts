@@ -18,6 +18,8 @@ export interface Certificate {
   date: string;
   credentialId: string;
   pdfPath: string;
+  issuerLogo?: string;
+  coverImage?: string;
 }
 
 export interface Testimonial {
@@ -38,7 +40,7 @@ export interface SkillCategory {
 
 export interface TimelineItem {
   id: string;
-  type: "experience" | "education";
+  type: "experience" | "education" | "award";
   title: string;
   organization: string;
   location: string;
@@ -46,6 +48,7 @@ export interface TimelineItem {
   endDate: string;
   description: string;
   highlights?: string[];
+  engagement?: "contract" | "part-time" | "award" | "education";
 }
 
 export interface NavLink {
