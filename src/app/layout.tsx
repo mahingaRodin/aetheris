@@ -24,17 +24,38 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AETHERIS | Engineering Intelligent Systems",
+  title: "RODIN | Rodin Mahinga — Engineering Intelligent Systems",
   description:
-    "Premium portfolio of a Software, DevOps, Cybersecurity, and Embedded Systems Engineer positioning for robotics and AI leadership.",
+    "Portfolio of Uwonkunda Mahinga Rodin — Software, DevOps, Azure, and Machine Learning engineer from Kigali building secure APIs, AI systems, and production platforms.",
   keywords: [
-    "robotics",
-    "AI",
+    "Rodin Mahinga",
+    "Uwonkunda Mahinga Rodin",
+    "Backend Engineer",
     "DevOps",
-    "cybersecurity",
-    "embedded systems",
+    "Azure",
+    "Machine Learning",
+    "Kigali",
+    "Rwanda Coding Academy",
+    "Spring Boot",
     "portfolio",
   ],
+  authors: [{ name: "Rodin Mahinga" }],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/brand/rodin-favicon.png", sizes: "64x64", type: "image/png" },
+    ],
+    apple: [{ url: "/brand/rodin-favicon.png", type: "image/png" }],
+    shortcut: ["/favicon.svg"],
+  },
+  openGraph: {
+    title: "RODIN | Rodin Mahinga",
+    description:
+      "Engineering intelligent systems — Backend, DevOps, Azure, and Machine Learning.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
