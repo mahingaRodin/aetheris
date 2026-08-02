@@ -1,7 +1,0 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
-  <rect width="1600" height="1000" fill="#111111"/>
-  <circle cx="800" cy="480" r="220" stroke="#D4AF37" stroke-opacity="0.2" stroke-width="2"/>
-  <circle cx="800" cy="480" r="140" stroke="#D4AF37" stroke-opacity="0.35" stroke-width="2"/>
-  <circle cx="800" cy="480" r="60" fill="#D4AF37" fill-opacity="0.25" stroke="#F4D35E" stroke-opacity="0.6"/>
-  <text x="80" y="900" fill="#D4AF37" fill-opacity="0.7" font-family="monospace" font-size="28" letter-spacing="6">HELIX PERCEPTION</text>
-</svg>
