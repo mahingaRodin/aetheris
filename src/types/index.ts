@@ -17,7 +17,11 @@ export interface Certificate {
   issuer: string;
   date: string;
   credentialId: string;
-  pdfPath: string;
+  /** PDF path for document certificates */
+  pdfPath?: string;
+  /** Image path for image certificates (e.g. Apple Swift) */
+  imagePath?: string;
+  previewType?: "pdf" | "image";
   issuerLogo?: string;
   coverImage?: string;
 }

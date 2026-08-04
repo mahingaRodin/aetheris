@@ -31,15 +31,15 @@ export const navLinks: NavLink[] = [
   { label: "Skills", href: "#skills" },
   { label: "Trajectory", href: "#trajectory" },
   { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
+  // { label: "Research", href: "#research" }, // enable later
   { label: "Credentials", href: "#certificates" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const stats = [
-  { value: "7+", label: "Years of Experience" },
-  { value: "95+", label: "Public Repositories" },
-  { value: "40+", label: "Systems Shipped" },
+  { value: "4+", label: "Years of Experience" },
+  { value: "96+", label: "Public Repositories" },
+  { value: "16+", label: "Systems Shipped" },
   { value: "11", label: "Verified Credentials" },
 ];
 
