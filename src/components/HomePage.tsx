@@ -12,7 +12,7 @@ import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
 import { Trajectory } from "@/components/sections/Trajectory";
 import { Projects } from "@/components/sections/Projects";
-import { Research } from "@/components/sections/Research";
+// import { Research } from "@/components/sections/Research"; // enable later
 import { Certificates } from "@/components/sections/Certificates";
 // import { Testimonials } from "@/components/sections/Testimonials"; // enable later
 import { Contact } from "@/components/sections/Contact";
@@ -40,7 +40,7 @@ export function HomePage() {
           <Skills />
           <Trajectory />
           <Projects />
-          <Research />
+          {/* <Research /> — re-enable when research paper section is ready */}
           <Certificates />
           {/* <Testimonials /> — re-enable when endorsements are ready */}
           <Contact />

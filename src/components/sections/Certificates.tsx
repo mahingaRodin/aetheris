@@ -7,10 +7,14 @@ import { Eye } from "lucide-react";
 import { certificates } from "@/data";
 import type { Certificate } from "@/types";
 import { PdfViewerModal } from "@/components/ui/PdfViewerModal";
+import { ImageViewerModal } from "@/components/ui/ImageViewerModal";
 import { IssuerBadge } from "@/components/ui/IssuerBadge";
 
 export function Certificates() {
   const [active, setActive] = useState<Certificate | null>(null);
+
+  const isImage =
+    active?.previewType === "image" || Boolean(active?.imagePath && !active?.pdfPath);
 
   return (
     <section id="certificates" className="relative z-[2] py-24 md:py-32">
@@ -23,8 +27,7 @@ export function Certificates() {
             Certificates
           </h2>
           <p className="mt-4 font-sans text-muted md:text-lg">
-            Preview any credential File and download when you
-            click Save.
+            Preview any credential on-site. Download only when you click Save.
           </p>
         </div>
 
@@ -48,13 +51,17 @@ export function Certificates() {
                     src={cert.coverImage}
                     alt=""
                     fill
-                    className="object-cover opacity-70 transition-transform duration-700 group-hover:scale-105"
+                    className={
+                      cert.previewType === "image"
+                        ? "object-contain bg-[#0b0b0b] p-3 opacity-90 transition-transform duration-700 group-hover:scale-[1.02]"
+                        : "object-cover opacity-70 transition-transform duration-700 group-hover:scale-105"
+                    }
                     sizes="(max-width: 768px) 100vw, 25vw"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 <div className="absolute left-4 top-4">
-                  <IssuerBadge issuer={cert.issuer} />
+                  <IssuerBadge issuer={cert.issuer} logoSrc={cert.issuerLogo} />
                 </div>
                 <span className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full border border-primary/40 bg-background/80 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-primary opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100">
                   <Eye size={12} /> View
@@ -77,7 +84,7 @@ export function Certificates() {
       </div>
 
       <PdfViewerModal
-        open={Boolean(active)}
+        open={Boolean(active) && !isImage}
         onClose={() => setActive(null)}
         title={active?.title ?? ""}
         subtitle={
@@ -86,6 +93,18 @@ export function Certificates() {
             : undefined
         }
         pdfPath={active?.pdfPath ?? ""}
+      />
+
+      <ImageViewerModal
+        open={Boolean(active) && isImage}
+        onClose={() => setActive(null)}
+        title={active?.title ?? ""}
+        subtitle={
+          active
+            ? `${active.issuer} · ${active.date} · ${active.credentialId}`
+            : undefined
+        }
+        imagePath={active?.imagePath ?? ""}
       />
     </section>
   );

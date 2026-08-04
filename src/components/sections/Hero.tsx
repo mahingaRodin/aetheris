@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { siteConfig } from "@/data";
 import { HeroShader } from "@/components/effects/HeroShader";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -98,22 +97,25 @@ export function Hero() {
             {siteConfig.ctaSecondary.label}
           </MagneticButton>
         </motion.div>
-      </motion.div>
 
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        whileHover={{ opacity: 0.9, y: 2 }}
-        whileTap={{ scale: 0.95 }}
-        className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-muted"
-      >
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em]">
-          Explore
-        </span>
-        <ChevronDown size={20} className="animate-bounce" strokeWidth={1.5} />
-      </motion.a>
+        <motion.a
+          href="#about"
+          aria-label="Scroll to about"
+          variants={item}
+          whileHover={{ y: 3 }}
+          whileTap={{ scale: 0.97 }}
+          className="group mt-14 inline-flex flex-col items-center"
+        >
+          <span className="relative flex h-10 w-6 items-start justify-center rounded-full border border-primary/25 bg-background/20 pt-2 backdrop-blur-sm transition-colors duration-500 group-hover:border-primary/50">
+            <motion.span
+              aria-hidden
+              className="h-1.5 w-1 rounded-full bg-primary/70"
+              animate={{ y: [0, 10, 0], opacity: [0.9, 0.25, 0.9] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </span>
+        </motion.a>
+      </motion.div>
     </header>
   );
 }

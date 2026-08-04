@@ -18,22 +18,23 @@ export function About() {
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="absolute -inset-4 -z-10 translate-x-4 translate-y-4 border border-primary/20" />
+          <div className="absolute -inset-4 -z-10 translate-x-4 translate-y-4 border border-white/10" />
           <motion.div
-            whileHover={{ scale: 1.015 }}
+            whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.5 }}
-            className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-card shadow-[0_0_0_1px_rgba(212,175,55,0.25),0_30px_80px_rgba(0,0,0,0.65),0_0_60px_rgba(212,175,55,0.18)]"
+            className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-card shadow-[0_0_0_1px_rgba(46,46,46,0.9),0_30px_80px_rgba(0,0,0,0.75)]"
           >
             <Image
               src={aboutContent.portraitImage}
               alt={`${siteConfig.name} — professional portrait`}
               fill
-              className="object-cover object-top transition-all duration-700"
+              className="object-cover object-top brightness-[0.72] contrast-[1.05] saturate-[0.85] transition-all duration-700"
               sizes="(max-width: 768px) 100vw, 40vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-primary/20" />
+            {/* Neutral dark wash — reduces gold cast / glare */}
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(0,0,0,0.15),transparent_55%),linear-gradient(to_top,rgba(10,10,10,0.78)_0%,rgba(10,10,10,0.28)_42%,rgba(10,10,10,0.35)_100%)]" />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 16 }}

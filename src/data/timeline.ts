@@ -72,7 +72,7 @@ export const timeline: TimelineItem[] = [
     engagement: "award",
     title: "Ranked 1st — Software Programmer",
     organization: "MissionNova 2024–2025",
-    location: "Rwanda",
+    location: "Togo",
     startDate: "07/2025",
     endDate: "07/2025",
     description:
