@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ThinkCyber">
+  <defs>
+    <linearGradient id="tc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0066FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0B1220"/>
+  <path fill="url(#tc)" d="M14 18h36v6H36v28h-8V24H14z"/>
+  <circle cx="46" cy="46" r="7" fill="none" stroke="#00E5FF" stroke-width="3"/>
+  <path d="M50.5 50.5 L56 56" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
+</svg>
